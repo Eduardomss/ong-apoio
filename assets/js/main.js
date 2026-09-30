@@ -1,4 +1,5 @@
 // Ponto de entrada: só orquestra os módulos (sem regras de negócio).
+import { iniciarTema } from "./modules/tema.js";
 import { iniciarMenu } from "./modules/menu.js";
 import { iniciarSPA } from "./modules/spa.js";
 import { renderizarListas, renderizarCadastros } from "./modules/templates.js";
@@ -13,6 +14,7 @@ function iniciarPagina() {
   iniciarFormulario();
 }
 
+iniciarTema();
 iniciarMenu();
 iniciarSPA(iniciarPagina);
 iniciarPagina();
