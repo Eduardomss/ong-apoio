@@ -6,6 +6,7 @@ Site institucional de uma ONG, com três páginas responsivas e acessíveis: `in
 - **HTML5 semântico**: header, nav, main, section, footer, fieldset/legend, hierarquia h1-h3 e textos alternativos.
 - **CSS3**: Design System com variáveis em `:root`, CSS Grid de 12 colunas, Flexbox, 5 breakpoints, menu dropdown/hambúrguer e estados de botões e formulários.
 - **JavaScript (ES Modules)**: navegação SPA com History API, templates com Template Literals, validação com RegEx, máscaras e `localStorage`.
+- **Imagens**: WebP e SVG, com `srcset`/`sizes` (versões de 600/1200 px e 400/800 px), `loading="lazy"` fora da primeira dobra e `fetchpriority="high"` no banner.
 - Sem bibliotecas externas em produção. **esbuild** é a única ferramenta de build (dependência de desenvolvimento).
 
 ## Estrutura de pastas
@@ -46,4 +47,4 @@ Variáveis em `assets/css/style.css`: 10 cores, 5 tamanhos de fonte (rem) e 7 es
 ## Versionamento
 - **GitFlow**: `main` (versões estáveis), `develop` (integração), `feature/*`, `release/*` e `hotfix/*`.
 - **Conventional Commits**: `feat:`, `fix:`, `docs:`, `chore:`.
-- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`, `v1.2.0`.
+- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`, `v1.2.0`, `v1.2.1`.
