@@ -44,7 +44,10 @@ Inclui modo escuro (automático pelo sistema e com botão manual, preferência s
 
 Variáveis em `assets/css/style.css`: 10 cores, 5 tamanhos de fonte (rem) e 7 espaçamentos com base em 4/8 px.
 
+## Deploy
+Publicação automática no **GitHub Pages** por GitHub Actions (`.github/workflows/deploy.yml`): a cada push na branch `main`, o workflow instala as dependências, executa `npm run build` e publica a pasta `dist/`. Para ativar: no repositório, em Settings > Pages, escolha "GitHub Actions" como Source. O endereço será `https://USUARIO.github.io/NOME-DO-REPOSITORIO/`.
+
 ## Versionamento
 - **GitFlow**: `main` (versões estáveis), `develop` (integração), `feature/*`, `release/*` e `hotfix/*`.
 - **Conventional Commits**: `feat:`, `fix:`, `docs:`, `chore:`.
-- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`, `v1.2.0`, `v1.2.1`.
+- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`, `v1.2.0`, `v1.2.1`, `v1.2.2`.
