@@ -6,13 +6,15 @@ Site institucional de uma ONG, com três páginas responsivas e acessíveis: `in
 - **HTML5 semântico**: header, nav, main, section, footer, fieldset/legend, hierarquia h1-h3 e textos alternativos.
 - **CSS3**: Design System com variáveis em `:root`, CSS Grid de 12 colunas, Flexbox, 5 breakpoints, menu dropdown/hambúrguer e estados de botões e formulários.
 - **JavaScript (ES Modules)**: navegação SPA com History API, templates com Template Literals, validação com RegEx, máscaras e `localStorage`.
-- Sem bibliotecas externas e sem etapa de build.
+- Sem bibliotecas externas em produção. **esbuild** é a única ferramenta de build (dependência de desenvolvimento).
 
 ## Estrutura de pastas
 ```
 /
 ├── index.html, projetos.html, cadastro.html
-├── README.md
+├── README.md, package.json
+├── scripts/build.mjs
+├── dist/ (build de produção)
 └── assets/
     ├── css/style.css
     ├── images/ (logo.svg, banner-principal.webp, voluntariado.webp)
@@ -32,7 +34,8 @@ Site institucional de uma ONG, com três páginas responsivas e acessíveis: `in
 4. Abra `http://localhost:8000` no navegador.
 
 ## Build e testes
-- Não há build: os arquivos são servidos como estão.
+- **Build de produção:** requer Node.js. Rode `npm install` e depois `npm run build`. O script `scripts/build.mjs` usa o esbuild para agrupar os módulos JS em um único arquivo minificado, minificar o CSS, minificar o HTML e copiar as imagens para a pasta `dist/`. Para testar, sirva a pasta `dist/` (por exemplo, `python -m http.server 8000 -d dist`).
+- Redução medida: cerca de 19% no total (JS 43%, CSS 6%, HTML 2%).
 - Não há testes automatizados. A verificação é manual: validar cada página em https://validator.w3.org/, testar o formulário (CPF, telefone e CEP), redimensionar a janela para conferir os breakpoints e navegar por teclado.
 
 ## Design System
@@ -43,4 +46,4 @@ Variáveis em `assets/css/style.css`: 10 cores, 5 tamanhos de fonte (rem) e 7 es
 ## Versionamento
 - **GitFlow**: `main` (versões estáveis), `develop` (integração), `feature/*`, `release/*` e `hotfix/*`.
 - **Conventional Commits**: `feat:`, `fix:`, `docs:`, `chore:`.
-- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`.
+- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`, `v1.2.0`.
