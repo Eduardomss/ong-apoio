@@ -18,7 +18,7 @@ Site institucional de uma ONG, com três páginas responsivas e acessíveis: `in
     ├── images/ (logo.svg, banner-principal.webp, voluntariado.webp)
     └── js/
         ├── main.js (ponto de entrada)
-        └── modules/ (menu, spa, templates, mascaras, validacao, formulario, armazenamento, utilidades)
+        └── modules/ (menu, tema, spa, templates, mascaras, validacao, formulario, armazenamento, utilidades)
 ```
 
 ## Pré-requisitos
@@ -36,9 +36,11 @@ Site institucional de uma ONG, com três páginas responsivas e acessíveis: `in
 - Não há testes automatizados. A verificação é manual: validar cada página em https://validator.w3.org/, testar o formulário (CPF, telefone e CEP), redimensionar a janela para conferir os breakpoints e navegar por teclado.
 
 ## Design System
+Inclui modo escuro (automático pelo sistema e com botão manual, preferência salva no `localStorage`) e ajustes para `prefers-contrast: more`. Contrastes calculados pela fórmula WCAG 2.1 (mínimo 4.5:1).
+
 Variáveis em `assets/css/style.css`: 10 cores, 5 tamanhos de fonte (rem) e 7 espaçamentos com base em 4/8 px.
 
 ## Versionamento
 - **GitFlow**: `main` (versões estáveis), `develop` (integração), `feature/*`, `release/*` e `hotfix/*`.
 - **Conventional Commits**: `feat:`, `fix:`, `docs:`, `chore:`.
-- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`.
+- **Versionamento semântico** (MAJOR.MINOR.PATCH) com tags anotadas: `v1.0.0`, `v1.0.1`, `v1.0.2`, `v1.1.0`.
